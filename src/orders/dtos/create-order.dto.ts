@@ -1,15 +1,13 @@
-import { IsNotEmpty, IsString, Length } from 'class-validator';
+import { IsNotEmpty, IsString, IsUUID } from 'class-validator';
 
 export class CreateOrderDTO {
   @IsNotEmpty()
   @IsString()
+  @IsUUID()
   productId: string;
 
   @IsNotEmpty()
-  client: string;
-
-  @IsNotEmpty()
   @IsString()
-  @Length(5, 50)
-  adrress: string;
+  @IsUUID()
+  clientId: string;
 }
